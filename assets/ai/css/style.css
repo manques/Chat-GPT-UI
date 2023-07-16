@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    /* border: 1px solid black; */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h-center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* mobile first */
+/* chat container */
+#openai-chat {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#chat-container {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 1000px;
+    height: 100vh;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#chat-container > div {
+    width: 100%;
+}
+
+
+/* outputs container */
+#chat-container .output-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+}
+
+/* output */
+#chat-container .output-container>.output {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* pagination */
+#chat-container .output-container>.output .pagination {
+    width: 100px;
+    order: 2;
+    padding: 0.5rem;
+}
+
+/* actions */
+#chat-container .output-container>.output .message-actions {
+    width: 100px;
+    order: 3;
+    padding: 0.5rem;
+}
+
+#chat-container .output-container>.output .message-actions i {
+    display: inline-block;
+    padding: 5px;
+}
+
+/* content container */
+#chat-container .output-container>.output .content-container {
+    flex-grow: 1;
+    display: flex;
+    order: 1;
+    min-width: 400px;
+}
+
+/* profile */
+#chat-container .output-container>.output .content-container .profile {
+    width: 60px;
+    padding: 10px;
+}
+
+/* image  */
+#chat-container .output-container>.output .content-container .profile img {
+    width: 40px;
+    width: 40px;
+}
+
+/* content */
+#chat-container .output-container>.output .content-container .content {
+    flex-grow: 1;
+    padding: 0.5rem;
+}
+
+/* more actions */
+.more-actions-box {
+    position: relative;
+}
+
+.more-actions-box .regnerative-response {
+    position: absolute;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    left: calc(50% - 79px);
+    bottom: 100%;
+    background-color: white;
+    margin-bottom: 8px;
+}
+.more-actions-box .regnerative-response svg{
+    padding-top: 0.3rem;
+}
+.more-actions-box .regnerative-response span{
+    padding-left: 0.3rem;
+}
+
+.more-actions-box .scroll-down {
+    position: absolute;
+    bottom: 100%;
+    border-radius: 50%;
+    border: 1px solid lightgrey;
+    right: 50px;
+    background-color: white;
+    margin-bottom: 8px;
+    height: 40px;
+    width: 40px;
+}
+
+.more-actions-box .regnerative-response:hover,
+.more-actions-box .scroll-down:hover {
+    background-color: rgb(219, 215, 215);
+}
+
+
+/* input */
+.input-box form{
+    width: 80%;
+    position: relative;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+.input-box form .input-text{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    /* border: 1px solid lightgray; */
+}
+
+.input-box form .input-text::placeholder{
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.input-box form .input-button{
+    position: absolute;
+    right: 0px;
+    padding: 0.4rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    width: 30px;
+    height: 30px;
+}
+
+.input-box form .input-button:hover{
+    background-color: brown;
+}
+
+
+/* copyright */
+.copyright-box {
+    padding: 1rem;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: gray;
+}
+
+
+@media only screen and (min-width: 600px) {
+
+    /* output */
+    #chat-container .output-container>.output {
+        flex-wrap: nowrap;
+        margin: 1rem 0rem;
+    }
+
+    /* pagination */
+    #chat-container .output-container>.output .pagination {
+        order: 1;
+    }
+
+    /* actions */
+    #chat-container .output-container>.output .message-actions {
+        order: 3;
+        margin-left: auto;
+    }
+
+    /* content container */
+    #chat-container .output-container>.output .content-container {
+        order: 2;
+        min-width: 400px;
+        width: 90%;
+    }
+}
